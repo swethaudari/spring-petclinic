@@ -4,6 +4,6 @@ WORKDIR /app
 RUN mvn package
 
 FROM eclipse-temurin:25-noble AS runtime
-COPY --FROM=build /app/targer/*.jar swetha.jar
+COPY --from=build /app/targer/*.jar swetha.jar
 EXPOSE 8080
 CMD ["java","-jar","swetha.jar"]
